@@ -4,32 +4,32 @@ function App() {
   const [places, setPlaces] = useState([
     {
       id: 1,
-      place: "right",
+      place: "left",
       checked: false,
     },
     {
       id: 2,
-      place: "right",
+      place: "left",
       checked: false,
     },
     {
       id: 3,
-      place: "right",
+      place: "left",
       checked: false,
     },
     {
       id: 4,
-      place: "left",
+      place: "right",
       checked: false,
     },
     {
       id: 5,
-      place: "left",
+      place: "right",
       checked: false,
     },
     {
       id: 6,
-      place: "left",
+      place: "right",
       checked: false,
     },
   ]);
@@ -68,12 +68,19 @@ function App() {
             return (
               <div key={i}>
                 {places[i]?.place === "left" && (
-                  <input
-                    onChange={(e) => {
-                      places[i].checked = e.target.checked;
-                    }}
-                    type="checkbox"
-                  />
+                  <>
+                    <input
+                      onChange={(e) => {
+                        places[i].checked = e.target.checked;
+                      }}
+                      type="checkbox"
+                      name={`c-${places[i].id}`}
+                    />
+                    <label htmlFor={`c-${places[i].id}`}>
+                      {" "}
+                      check{` ${i + 1}`}
+                    </label>
+                  </>
                 )}
               </div>
             );
@@ -84,12 +91,19 @@ function App() {
             return (
               <div key={i}>
                 {places[i]?.place === "right" && (
-                  <input
-                    onChange={(e) => {
-                      places[i].checked = e.target.checked;
-                    }}
-                    type="checkbox"
-                  />
+                  <>
+                    <input
+                      onChange={(e) => {
+                        places[i].checked = e.target.checked;
+                      }}
+                      type="checkbox"
+                      name={`c-${places[i].id}`}
+                    />
+                    <label htmlFor={`c-${places[i].id}`}>
+                      {" "}
+                      check{` ${i + 1}`}
+                    </label>
+                  </>
                 )}
               </div>
             );
