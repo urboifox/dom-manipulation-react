@@ -34,12 +34,25 @@ function App() {
     },
   ]);
 
-  const handleButtonClick = () => {
+  const handleToRight = () => {
     const updatedPlaces = places.map((e) => {
-      if (e.checked) {
+      if (e.checked && e.place === "left") {
         return {
           ...e,
-          place: e.place === "left" ? "right" : "left",
+          place: "right",
+          checked: false,
+        };
+      }
+      return e;
+    });
+    setPlaces(updatedPlaces);
+  };
+  const handleToLeft = () => {
+    const updatedPlaces = places.map((e) => {
+      if (e.checked && e.place === "right") {
+        return {
+          ...e,
+          place: "left",
           checked: false,
         };
       }
@@ -84,8 +97,8 @@ function App() {
         </div>
       </div>
 
-      <button onClick={() => handleButtonClick()}>Move to left</button>
-      <button onClick={() => handleButtonClick()}>Move to right</button>
+      <button onClick={() => handleToLeft()}>Move to left</button>
+      <button onClick={() => handleToRight()}>Move to right</button>
     </main>
   );
 }
