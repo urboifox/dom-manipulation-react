@@ -74,7 +74,7 @@ function App() {
                         places[i].checked = e.target.checked;
                       }}
                       type="checkbox"
-                      name={`c-${places[i].id}`}
+                      id={`c-${places[i].id}`}
                     />
                     <label htmlFor={`c-${places[i].id}`}>
                       {" "}
@@ -97,7 +97,7 @@ function App() {
                         places[i].checked = e.target.checked;
                       }}
                       type="checkbox"
-                      name={`c-${places[i].id}`}
+                      id={`c-${places[i].id}`}
                     />
                     <label htmlFor={`c-${places[i].id}`}>
                       {" "}
