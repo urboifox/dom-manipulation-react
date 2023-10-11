@@ -62,8 +62,8 @@ function App() {
   };
   return (
     <main>
-      <div className="flex ">
-        <div className="border p-5">
+      <div className="flex w-screen items-center justify-center gap-4">
+        <div className="border rounded-lg border-purple-400 p-5">
           {places?.map((_, i) => {
             return (
               <div key={i}>
@@ -86,7 +86,7 @@ function App() {
             );
           })}
         </div>
-        <div className="border p-5">
+        <div className="border p-5 rounded-lg border-purple-400">
           {places?.map((_, i) => {
             return (
               <div key={i}>
@@ -111,8 +111,10 @@ function App() {
         </div>
       </div>
 
-      <button onClick={() => handleToLeft()}>Move to left</button>
-      <button onClick={() => handleToRight()}>Move to right</button>
+      <div className="flex w-screen justify-center mt-5 gap-3">
+        <button onClick={() => handleToLeft()}>Move to left</button>
+        <button onClick={() => handleToRight()}>Move to right</button>
+      </div>
     </main>
   );
 }
